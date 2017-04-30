@@ -1,1 +1,14 @@
-= @shots
+%img{ src: @shot_image }
+%h1
+  = @shot.title
+
+%fieldset
+  %legend
+    Description
+  = @shot.description
+
+%form{ action: '/guess', method: 'POST' }
+  %input{ name: 'tags', type: 'hidden', value: @shot_tags }
+  %input{ name: 'image', type: 'hidden', value: @shot_image }
+  %input{ name: 'guess', type: 'text', placeholder: 'Guess a tag...' }
+  %input{ name: 'submit', type: 'submit' }

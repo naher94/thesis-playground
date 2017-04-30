@@ -1,0 +1,17 @@
+%h1 Failed!
+%img{ src: @image }
+
+%h2
+  You Guessed
+= @guess
+
+%h2
+  Possible Tags
+
+%ul
+  - @tags.each do |tag|
+    %li
+      = tag
+
+%a{href: '/'}
+  Try again?
