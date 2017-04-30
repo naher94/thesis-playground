@@ -5,7 +5,6 @@ require 'nokogiri'
 require 'open-uri'
 require 'haml'
 require 'iso8601'
-require 'flickr.rb'
 require 'dribbble'
 
 # Load environment variables using Dotenv. If a .env file exists, it will
@@ -17,14 +16,8 @@ configure :development do
 end
 
 get '/' do
-#  img_tags = ['puppy','cats','watermelon','hamburger']
-#  @photos = get_dribbble_photos(img_tags.sample)
-#  haml :index
-#  img = flickr.photos.last
-#  @hola = img.source
-#  @tagz = img.tags[0]
-#  haml :index
-  @shots = Dribbble::Shot.all(ENV["token"])[0]
+  @shot = Dribbble::Shot.all(ENV["token"]).sample
+  haml :index
 end
 
 private
@@ -35,6 +28,6 @@ def get_dribbble_photos(tag)
 
   images = document.css(".dribbble-link picture source img")
   user_tags = document.css(".")
-  
+
   return images.to_a
 end
