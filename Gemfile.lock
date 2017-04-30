@@ -6,8 +6,6 @@ GEM
     dotenv (2.2.1)
     dribbble (1.2.0)
       rest-client (~> 2.0)
-    flickr.rb (1.2.1)
-      xml-simple (>= 1.0.7)
     haml (5.0.0)
       temple (>= 0.8.0)
       tilt
@@ -41,7 +39,6 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4)
-    xml-simple (1.1.5)
 
 PLATFORMS
   ruby
@@ -49,7 +46,6 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   dribbble
-  flickr.rb
   haml
   iso8601
   json

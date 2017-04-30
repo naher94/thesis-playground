@@ -15,5 +15,4 @@ end
 gem 'nokogiri'
 gem 'haml'
 gem 'iso8601'
-gem 'flickr.rb'
 gem 'dribbble'
