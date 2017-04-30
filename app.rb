@@ -24,7 +24,7 @@ get '/' do
 #  @hola = img.source
 #  @tagz = img.tags[0]
 #  haml :index
-  @shots = Dribbble::Shot.all(token)[0]
+  @shots = Dribbble::Shot.all(ENV["token"])[0]
 end
 
 private
