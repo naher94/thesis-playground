@@ -20,8 +20,8 @@ configure :development do
 end
 
 get '/' do
-  @lives = session["lives"]
-  @lives = 3
+  #@lives = session["lives"]
+  #@lives = 3
   @shot = Dribbble::Shot.all(ENV["token"]).sample
   @shot_image = @shot.images["normal"]
   
@@ -31,7 +31,7 @@ get '/' do
 end
 
 post '/guess' do
-  @lives = session["lives"]
+  #@lives = session["lives"]
   @tags = JSON.parse(Base64.decode64(Base64.decode64(params["tags"])))
   @image = params["image"]
   @guess = params["guess"]
@@ -39,7 +39,7 @@ post '/guess' do
   if @tags.include? @guess
     haml :success
   else
-    @lives = @lives - 1
+    #@lives = @lives - 1
     haml :failed
   end
 end

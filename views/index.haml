@@ -4,7 +4,6 @@
 %div.row
   %div.small-12.medium-6.medium-centered.small-centered.columns
     %img{ src: @shot_image }
-    %h2= @lives
     %form{ action: '/guess', method: 'POST' }
       %input{ name: 'tags', type: 'hidden', value: @shot_tags }
       %input{ name: 'image', type: 'hidden', value: @shot_image }
