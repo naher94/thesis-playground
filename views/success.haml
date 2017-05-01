@@ -3,21 +3,16 @@
 
 %div.row
   %div.small-12.medium-6.medium-centered.small-centered.columns
-    %img{ src: @image }
+    %div.da-image
+      %img{ src: @image }
     
     %h1.win Success!
-    %h2
-      You Guessed
-    = @guess
-
-    %h2
-      Possible Tags
 
     %div.tag-box
       - @tags.each do |tag|
         %div.tag-label
           = tag
     
-    %div
-      %a.next{href: '/'}
+    %a{href: '/'}
+      %div.next
         Next

@@ -47,6 +47,8 @@ input[type=text] {
 
 .tag-box{
   display: inline-block;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 h1{
@@ -59,4 +61,27 @@ h1{
   color: white;
   padding-top: 10px;
   padding-bottom: 12px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+a{
+  text-align: center;
+  color: white;
+}
+
+.next{
+  text-align: center;
+}
+
+.da-image{
+  border-radius: 4px 4px 0px 0px;
+  overflow: hidden;
+}
+
+.lose{
+  background-color: #DF4144;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  border-radius: 0px 0px 4px 4px;
 }
