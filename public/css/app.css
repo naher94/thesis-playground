@@ -3,6 +3,10 @@ body, p, h1, h2, h3, h4{
   font-family: 'Lato', sans-serif;
 }
 
+body{
+  background-color: #efefef;
+}
+
 .row{
   margin-top: 100px;
 }
@@ -75,6 +79,11 @@ a{
 
 .da-image{
   border-radius: 4px 4px 0px 0px;
+  overflow: hidden;
+}
+
+.da-image-two{
+  border-radius: 4px 4px 4px 4px;
   overflow: hidden;
 }
 

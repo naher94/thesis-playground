@@ -4,9 +4,10 @@
 
 %div.row
   %div.small-12.medium-6.medium-centered.small-centered.columns
-    %img{ src: @shot_image }
+    %div.da-image-two
+      %img{ src: @shot_image }
     %form{ action: '/guess', method: 'POST' }
-      %input{ name: 'tags', type: 'hidden', value: @shot_tags }
+      %input{ name: 'tags', type: 'hidden', value: @shot_tags, autofocus: true }
       %input{ name: 'image', type: 'hidden', value: @shot_image }
       %input#text-field{ name: 'guess', type: 'text', placeholder: 'Guess a tag...' }
       %input{ name: 'submit', type: 'submit' }

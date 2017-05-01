@@ -1,9 +1,10 @@
 $(document).foundation()
 
-var input = document.getElementById('text-field');
+//var input = document.getElementById('text-field').autofocus;
 
-input.focus();
-input.select();
+$(function() {
+  $("text-field").focus();
+});
 
 $(document).keydown(function(e){
   if (e.keyCode == 13) {
