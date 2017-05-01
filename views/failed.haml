@@ -1,17 +1,18 @@
-%h1 Nope!
-%img{ src: @image }
+%link{rel: 'stylesheet', href: '../css/foundation.css'}
+%link{rel: 'stylesheet', href: '../css/app.css'}
 
-%h2
-  You Guessed
-= @guess
+%div.row
+  %div.small-12.medium-6.medium-centered.small-centered.columns
+    %div.da-image
+      %img{ src: @image }
+    
+    %h1.lose Nope!
 
-%h2
-  Possible Tags
-
-%ul
-  - @tags.each do |tag|
-    %li
-      = tag
-
-%a{href: '/'}
-  Next
+    %div.tag-box
+      - @tags.each do |tag|
+        %div.tag-label
+          = tag
+    
+    %a{href: '/'}
+      %div.next
+        Next
