@@ -1,17 +1,23 @@
-%h1 Success!
-%img{ src: @image }
+%link{rel: 'stylesheet', href: '../css/foundation.css'}
+%link{rel: 'stylesheet', href: '../css/app.css'}
 
-%h2
-  You Guessed
-= @guess
+%div.row
+  %div.small-12.medium-6.medium-centered.small-centered.columns
+    %img{ src: @image }
+    
+    %h1.win Success!
+    %h2
+      You Guessed
+    = @guess
 
-%h2
-  Possible Tags
+    %h2
+      Possible Tags
 
-%div
-  - @tags.each do |tag|
-    %div.tag-label
-      = tag
-
-%a{href: '/'}
-  Next
+    %div.tag-box
+      - @tags.each do |tag|
+        %div.tag-label
+          = tag
+    
+    %div
+      %a.next{href: '/'}
+        Next

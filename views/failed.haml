@@ -8,10 +8,11 @@
 %h2
   Possible Tags
 
-%ul
+%div
   - @tags.each do |tag|
-    %li
+    %div.tag-label
       = tag
 
-%a{href: '/'}
-  Next
+%div
+  %a{href: '/'}
+    Next
