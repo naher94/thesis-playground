@@ -39,7 +39,7 @@ post '/guess' do
   if @tags.include? @guess
     haml :success
   else
-    session["lives"] = session["lives"] - 1
+    @lives = @lives - 1
     haml :failed
   end
 end
