@@ -12,3 +12,4 @@ $(document).keydown(function(e){
   }
 });
 
+$("#guess").focus();
