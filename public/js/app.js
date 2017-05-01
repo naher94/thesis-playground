@@ -5,3 +5,5 @@ $(document).keydown(function(e){
     window.location.replace("/")
   }
 });
+
+$("#guess").focus();
