@@ -1,0 +1,26 @@
+%link{rel: 'stylesheet', href: '../css/foundation.css'}
+%link{rel: 'stylesheet', href: '../css/app.css'}
+%link{rel: 'script', href: '../js/app.js'}
+
+%title Not Quite - Get Inspired
+
+%div.row
+  %div.small-12.medium-6.medium-centered.small-centered.columns
+    %div.da-image
+      %img{ src: @image }
+
+    %h1.lose Nope!
+
+    %div.tag-box
+      - @tags.each do |tag|
+        %div.tag-label
+          = tag
+
+    %a{href: '/sandbox'}
+      %div.next
+        Next
+
+%script{type: 'application/javascript', src: '../js/vendor/jquery.js'}
+%script{type: 'application/javascript', src: '../js/vendor/foundation.min.js'}
+%script{type: 'application/javascript', src: '../js/vendor/what-input.js'}
+%script{type: 'application/javascript', src: '../js/app.js'}

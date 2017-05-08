@@ -2,23 +2,17 @@
 %link{rel: 'stylesheet', href: '../css/app.css'}
 %link{rel: 'script', href: '../js/app.js'}
 
-%title Not Quite - Get Inspired
+%title Get Inspired
 
 %div.row
   %div.small-12.medium-6.medium-centered.small-centered.columns
-    %div.da-image
-      %img{ src: @image }
-
-    %h1.lose Nope!
-
-    %div.tag-box
-      - @tags.each do |tag|
-        %div.tag-label
-          = tag
-
-    %a{href: '/'}
-      %div.next
-        Next
+    %div.da-image-two
+      %img{ src: @shot_image }
+    %form{ action: '/guess', method: 'POST' }
+      %input{ name: 'tags', type: 'hidden', value: @shot_tags, autofocus: true }
+      %input{ name: 'image', type: 'hidden', value: @shot_image }
+      %input{ name: 'guess', type: 'text', id: 'guess', placeholder: 'Guess a tag...' }
+      %input{ name: 'submit', type: 'submit' }
 
 %script{type: 'application/javascript', src: '../js/vendor/jquery.js'}
 %script{type: 'application/javascript', src: '../js/vendor/foundation.min.js'}

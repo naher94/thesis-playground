@@ -19,7 +19,7 @@ configure :development do
   Dotenv.load
 end
 
-get '/' do
+get '/sandbox' do
   #@lives = session["lives"]
   #@lives = 3
   @shot = Dribbble::Shot.all(ENV["token"]).sample
@@ -37,9 +37,9 @@ post '/guess' do
   @guess = params["guess"]
 
   if @tags.include? @guess
-    haml :success
+    haml :sandbox_success
   else
     #@lives = @lives - 1
-    haml :failed
+    haml :sandbox_failed
   end
 end
