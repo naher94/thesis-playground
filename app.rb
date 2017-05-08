@@ -26,10 +26,12 @@ end
 get '/sandbox' do
   #@lives = session["lives"]
   #@lives = 3
+  
+  # Pulling a shot at random from the homepage
   @shot = Dribbble::Shot.all(ENV["token"]).sample
   @shot_image = @shot.images["normal"]
   
-  # in the dom the tags will not be
+  # Pulling the tags from the shot
   @shot_tags = Base64.encode64(Base64.encode64(@shot.tags.to_json))
   haml :sandbox
 end
