@@ -19,6 +19,10 @@ configure :development do
   Dotenv.load
 end
 
+get '/' do
+  haml :index
+end
+
 get '/sandbox' do
   #@lives = session["lives"]
   #@lives = 3
@@ -27,7 +31,7 @@ get '/sandbox' do
   
   # in the dom the tags will not be
   @shot_tags = Base64.encode64(Base64.encode64(@shot.tags.to_json))
-  haml :index
+  haml :sandbox
 end
 
 post '/guess' do
