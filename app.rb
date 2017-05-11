@@ -36,6 +36,22 @@ get '/sandbox' do
   haml :sandbox
 end
 
+get '/relation' do
+  #Pull 2 shots with the same tag
+  @shot_one = Dribbble::Shot.all(ENV["token"]).sample
+  @shot_one_tag_random = @shot_one.tags.sample
+  
+  #search for second shot based on a tag from the first
+  @shot_two = Dribbble::Shot.search(@shot_one_tag_random).sample
+  
+  @shot_one_image = @shot_one.images["normal"]
+  @shot_two_image = @shot_two.images["normal"]
+  
+  #user must guess the shared tag
+  haml :relation
+end
+
+
 post '/guess' do
   #@lives = session["lives"]
   @tags = JSON.parse(Base64.decode64(Base64.decode64(params["tags"])))
