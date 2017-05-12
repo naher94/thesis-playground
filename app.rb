@@ -82,8 +82,8 @@ post '/guess-r' do
     @guess = params["guess"]
     #subset string for the following line
     if @answer.include? @guess
-    haml :sandbox_success
+    haml :relation_success
   else
-    haml :sandbox_failed
+    haml :relation_failed
   end
 end
