@@ -51,6 +51,12 @@ get '/relation' do
   haml :relation
 end
 
+get '/search' do
+  #timer based
+  #see if the user can find the image based on 2 keywords
+  #stop and reset button
+end
+
 
 post '/guess' do
   #@lives = session["lives"]
