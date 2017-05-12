@@ -38,11 +38,13 @@ end
 
 get '/relation' do
   #Pull 2 shots with the same tag
-  @shot_one = Dribbble::Shot.all(ENV["token"]).sample
-  @shot_one_tag_random = @shot_one.tags.sample
+  @bucket = Dribbble::Bucket.find(ENV["token"], '513760')
+  @shot_one = @bucket.shots.sample
+  @shot_two = @bucket.shots.sample
+  @shot_one_tags = @shot_one.tags.sample
   
   #search for second shot based on a tag from the first
-  @shot_two = Dribbble::Shot.search(@shot_one_tag_random).sample
+#  @shot_two = Dribbble::Shot.search(@shot_one_tag_random).sample
   
   @shot_one_image = @shot_one.images["normal"]
   @shot_two_image = @shot_two.images["normal"]
@@ -51,13 +53,13 @@ get '/relation' do
   haml :relation
 end
 
-get '/search' do
-  #timer based
-  #see if the user can find the image based on 2 keywords
-  @shot = Dribbble::Shot.all(ENV["token"]).sample
-  @shot_image = @shot.images["normal"]
-  #stop and reset button
-end
+#get '/search' do
+#  #timer based
+#  #see if the user can find the image based on 2 keywords
+#  @shot = Dribbble::Shot.all(ENV["token"]).sample
+#  @shot_image = @shot.images["normal"]
+#  #stop and reset button
+#end
 
 
 post '/guess' do
