@@ -45,7 +45,7 @@ get '/relation' do
   
   #search for second shot based on a tag from the first
 #  @shot_two = Dribbble::Shot.search(@shot_one_tag_random).sample
-  
+  @answer = @bucket.name
   @shot_one_image = @shot_one.images["normal"]
   @shot_two_image = @shot_two.images["normal"]
   
