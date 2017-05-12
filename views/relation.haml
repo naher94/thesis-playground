@@ -9,7 +9,7 @@
     %div.da-image-two
       %img{ src: @shot_one_image }
       %img{ src: @shot_two_image }
-    %form{ action: '/guess', method: 'POST' }
+    %form{ action: '/guess-r', method: 'POST' }
       %input{ name: 'tags', type: 'hidden', value: @shot_tags, autofocus: true }
       %input{ name: 'image', type: 'hidden', value: @shot_image }
       %input{ name: 'guess', type: 'text', id: 'guess', placeholder: 'Guess the relation...' }

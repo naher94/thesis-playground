@@ -75,3 +75,15 @@ post '/guess' do
     haml :sandbox_failed
   end
 end
+
+post '/guess-r' do
+    @answer = params["tags"]
+    @image = params["image"]
+    @guess = params["guess"]
+    #subset string for the following line
+    if @answer.include? @guess
+    haml :sandbox_success
+  else
+    haml :sandbox_failed
+  end
+end
