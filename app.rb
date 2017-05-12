@@ -54,6 +54,8 @@ end
 get '/search' do
   #timer based
   #see if the user can find the image based on 2 keywords
+  @shot = Dribbble::Shot.all(ENV["token"]).sample
+  @shot_image = @shot.images["normal"]
   #stop and reset button
 end
 
